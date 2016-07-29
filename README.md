@@ -1,12 +1,12 @@
-# Set up mac
-This repo contains chef-solo configuration to set up a Mac running OSX.
+# Set up Mac via Chef
+This repo contains chef-solo configuration/recipes to set up a Mac running OSX.
 Currently it only installs various packages a developer might use but could be
 expanded to perform other set up.
 
 It first installs homebrew, then cask (for the GUI applications) and then installs
-the actually packages/applications.
+the actual packages/applications.
 
-Currently the following applications are installed:
+Currently, the following applications are installed:
 * chrome
 * spectacle - for arranging windows.
 * shuttle - an ssh client connection manager.
@@ -35,7 +35,7 @@ set of cookbooks then remove the berksfile.lock and rerun the vendor.sh script.
 Once all the cookbooks have been vendored it's possible to now converge. Run:
 
 ```bash
-./converge.sh
+sudo ./converge.sh
 ```
 
 This uses chef-solo installed by the chefDK. Other options can be passed to chef-solo
@@ -57,3 +57,29 @@ to by the vendor script above.
 
 In config/mac_setup_config.json is the run_list. Currently there is only the default
 recipe but this can be expanded later.
+
+## Add more applications
+
+To get chef to install more applications edit:
+site_cookbooks/mac_setup/recipes/default.rb
+
+Add the name of the application to the recipe. If the application/tool/program
+ can be installed via brew add:
+
+```ruby
+package "appname"
+```
+
+If the application has to be installed via cask then add:
+
+```ruby
+homebrew_cask "appname"
+```
+
+To find the correct appname to add you can perform a brew search or a cask search
+on the command line
+
+```bash
+brew search approximate_app_name
+brew cask search approximate_app_name
+```
