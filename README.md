@@ -61,23 +61,12 @@ recipe but this can be expanded later.
 ## Add more applications
 
 To get chef to install more applications edit:
-site_cookbooks/mac_setup/recipes/default.rb
+site_cookbooks/mac_setup/attributes/default.rb
 
-Add the name of the application to the recipe. If the application/tool/program
- can be installed via brew add:
-
-```ruby
-package "appname"
-```
-
-If the application has to be installed via cask then add:
-
-```ruby
-homebrew_cask "appname"
-```
+Add the application name to the appropriate app list array.
 
 To find the correct appname to add you can perform a brew search or a cask search
-on the command line
+on the command line:
 
 ```bash
 brew search approximate_app_name
