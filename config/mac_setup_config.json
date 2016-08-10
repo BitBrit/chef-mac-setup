@@ -1,3 +1,7 @@
 {
-  "run_list": [ "recipe[mac_setup]" ]
+  "run_list": [
+                "recipe[mac_setup::default]",
+                "recipe[mac_setup::create_folders]",
+                "recipe[mac_setup::install_gems]"
+              ]
 }

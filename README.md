@@ -28,7 +28,8 @@ To download all the require cookbooks run:
 
 This will use the berksfile.lock file to ensure that it downloads the same
 cookbooks the procedure was tested with. If you'd like to test with the latest
-set of cookbooks then remove the berksfile.lock and rerun the vendor.sh script.
+set of cookbooks (or if you alter the mac_setup cookbook) then remove the
+berksfile.lock and rerun the vendor.sh script.
 
 ## Converge
 
