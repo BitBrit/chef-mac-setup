@@ -2,7 +2,7 @@
 default['mac_setup']['username'] = 'ghill'
 
 default['mac_setup']['brew_apps'] = [
-
+  "node"
 ]
 
 default['mac_setup']['cask_apps'] = [
@@ -16,7 +16,9 @@ default['mac_setup']['cask_apps'] = [
   "virtualbox",
   "virtualbox-extension-pack",
   "vagrant",
-  "vmware-fusion"
+  "vmware-fusion",
+  "java",
+  "eclipse-java"
 ]
 
 default['mac_setup']['gems'] = {

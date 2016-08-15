@@ -15,7 +15,7 @@ homebrew_tap 'caskroom/cask'
 package "brew-cask"
 
 node['mac_setup']['brew_apps'].each do |app|
-  homebrew_cask app
+  package app
 end
 
 node['mac_setup']['cask_apps'].each do |app|
